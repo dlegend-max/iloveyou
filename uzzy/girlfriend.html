@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DONT SAY NO</title>
+   
+    <style>
+         body{
+        background-color: lightpink;
+        font-size: 50px;
+        font-weight: 900;
+    }
+    div{
+        text-align: center;
+        vertical-align:middle;
+    }
+    #no{
+        position:absolute;
+    }
+    button {
+        font-size: 25px;
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        cursor: pointer;
+        transition:0.3;
+    }
+    .yes{
+        background-color: lightgreen;
+    }
+    .yes:hover {
+    background-color: green;
+    color: white;
+    transform: scale(1.1); /* Button grows slightly */
+}
+
+    .no{
+        background-color: red;
+    }
+    .no:hover {
+    background-color: red;
+    color: white;
+    transform: scale(1.1);
+}
+b{
+     color:red;
+}
+    </style>
+
+   
+</head>
+<body>
+    <div>
+        <h1>Will you be my<b> GIRLFRIEND?</b></h1>
+        <button class="yes" onclick="window.location.href='yes.html'">Yes</button>
+        <button class="no" id="noButton" onmouseover="changeText()" onmouseout="resetText()" onmousemove="moveNo()">No</button>
+    </div>
+    <script>
+         function changeText() {
+            document.getElementById("noButton").innerHTML = "Please tap Yes 😢";
+        }
+
+        function resetText() {
+            document.getElementById("noButton").innerHTML = "No";
+        }
+
+         function moveNo() {
+            var x = Math.random() * (window.innerWidth - 100);
+            var y = Math.random() * (window.innerHeight - 50);
+            var noButton = document.getElementById("noButton");
+            noButton.style.left = x + "px";
+            noButton.style.top = y + "px";
+            noButton.innerHTML = "Please tap Yes 😢";
+         }
+    </script>
+</body>
+</html>
